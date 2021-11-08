@@ -49,7 +49,8 @@ const Account = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="ATMForm">
+      <form onSubmit={handleSubmit}>
       <h2 id="total">{status}</h2>
       <label>Select an action below to continue</label>
       <select onChange={(e) => handleModeSelect(e)} name="mode" id="mode-select">
@@ -59,6 +60,7 @@ const Account = () => {
       </select>
       {atmMode && <ATMDeposit onChange={handleChange} isDeposit={isDeposit} isValid={validTransaction}></ATMDeposit>}
     </form>
+    </div>
   );
 };
 // ========================================
